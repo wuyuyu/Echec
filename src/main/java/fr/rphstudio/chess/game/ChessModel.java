@@ -8,6 +8,8 @@ import java.util.List;
 
 public class ChessModel implements fr.rphstudio.chess.interf.IChess {
 
+    public Board boardGame;
+
     private ChessModel (){}
 
     private static ChessModel INSTANCE = new ChessModel();
