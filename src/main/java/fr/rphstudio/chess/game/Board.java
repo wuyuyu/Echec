@@ -55,25 +55,36 @@ public class Board {
         return piece;
     }
 
-    public int piecesCounter () {
+    public int piecesCounterWhite () {
 
         int nbPiecesWhite = 0;
-        int nbPiecesBlack = 0;
         for (int i = 0; i < boardGame.length; i = i + 1) {
             for (int j = 0; j < boardGame[0].length; j = j + 1) {
                 this.selectedPiece = this.boardGame[i][j];
                 if (selectedPiece != null) {
                     if(selectedPiece.getChessColor() == IChess.ChessColor.CLR_WHITE){
                         nbPiecesWhite = nbPiecesWhite + 1;
-                        return nbPiecesWhite;
-                    } else {
-                        nbPiecesBlack = nbPiecesBlack + 1;
-                        return nbPiecesBlack;
                     }
                 }
             }
         }
-        return 0;
-
+        return nbPiecesWhite;
     }
+
+    public int piecesCounterBlack () {
+
+        int nbPiecesBlack = 0;
+        for (int i = 0; i < boardGame.length; i = i + 1) {
+            for (int j = 0; j < boardGame[0].length; j = j + 1) {
+                this.selectedPiece = this.boardGame[i][j];
+                if (selectedPiece != null) {
+                    if(selectedPiece.getChessColor() == IChess.ChessColor.CLR_WHITE){
+                        nbPiecesBlack++;
+                    }
+                }
+            }
+        }
+        return nbPiecesBlack;
+    }
+
 }

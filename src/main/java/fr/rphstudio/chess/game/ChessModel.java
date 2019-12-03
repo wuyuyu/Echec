@@ -56,8 +56,14 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
     }
 
     @Override
-    public int getNbRemainingPieces(ChessColor color) { return 0;
-        return Board.piecesCounter;
+    public int getNbRemainingPieces(ChessColor color) {
+        if (color == ChessColor.CLR_WHITE){
+            return board.piecesCounterWhite();
+        }
+        if (color == ChessColor.CLR_BLACK){
+            return board.piecesCounterBlack();
+        }
+        return 0;
     }
 
     @Override
