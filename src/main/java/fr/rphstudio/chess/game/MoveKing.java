@@ -27,7 +27,18 @@ public class MoveKing implements IMove {
                 if (position_Y > 0) {
                     positions.add(new IChess.ChessPosition(position.x, position.y - 1));
                 }
-                positions.add(new IChess.ChessPosition(position.x, position.y - 1));
+                if (position_X < 7 && position_Y > 0) {
+                    positions.add(new IChess.ChessPosition(position.x + 1, position.y - 1));
+                }
+                if (position_X > 0 && position_Y > 0) {
+                    positions.add(new IChess.ChessPosition(position.x - 1, position.y - 1));
+                }
+                if (position_X < 7 && position_Y < 7) {
+                    positions.add(new IChess.ChessPosition(position.x + 1, position.y + 1));
+                }
+                if (position_X > 0 && position_Y < 7) {
+                    positions.add(new IChess.ChessPosition(position.x - 1, position.y + 1));
+                }
             } else if (piece.getChessColor() == IChess.ChessColor.CLR_WHITE) {
                 if (position_X > 0) {
                     positions.add(new IChess.ChessPosition(position.x - 1, position.y));
@@ -37,14 +48,22 @@ public class MoveKing implements IMove {
                 }
                 if (position_Y < 7) {
                     positions.add(new IChess.ChessPosition(position.x, position.y + 1));
-
                 }
                 if (position_Y > 0) {
                     positions.add(new IChess.ChessPosition(position.x, position.y - 1));
+                }
+                if (position_X < 7 && position_Y > 0) {
                     positions.add(new IChess.ChessPosition(position.x + 1, position.y - 1));
                 }
-                positions.add(new IChess.ChessPosition(position.x + 1, position.y - 1));
-
+                if (position_X > 0 && position_Y > 0) {
+                    positions.add(new IChess.ChessPosition(position.x - 1, position.y - 1));
+                }
+                if (position_X < 7 && position_Y < 7) {
+                    positions.add(new IChess.ChessPosition(position.x + 1, position.y + 1));
+                }
+                if (position_X > 0 && position_Y < 7) {
+                    positions.add(new IChess.ChessPosition(position.x - 1, position.y + 1));
+                }
             }
             return positions;
         }
