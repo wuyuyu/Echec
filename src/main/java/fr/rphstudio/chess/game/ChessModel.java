@@ -68,13 +68,18 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
 
     @Override
     public List<ChessPosition> getPieceMoves(ChessPosition p) {
-        ArrayList list = new ArrayList();
+        List list = new ArrayList();
+        Piece piece = this.board.takePiece(p);
+        if(piece != null){
+            return piece.getMove(p,this.board);
+
+        }
         return list;
     }
 
     @Override
     public void movePiece(ChessPosition p0, ChessPosition p1) {
-        
+        this.board.movingPiece(p0, p1);
     }
 
     @Override
