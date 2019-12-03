@@ -1,8 +1,10 @@
-/Users/wu/Desktop/Echec/src/main/java/fr/rphstudio/chess/interf/IChess.java
-/Users/wu/Desktop/Echec/src/main/java/fr/rphstudio/chess/launcher/MainLauncher.java
-/Users/wu/Desktop/Echec/src/main/java/fr/rphstudio/chess/launcher/ChessFontManager.java
-/Users/wu/Desktop/Echec/src/main/java/fr/rphstudio/chess/interf/ChessException.java
-/Users/wu/Desktop/Echec/src/main/java/fr/rphstudio/chess/game/ChessModel.java
-/Users/wu/Desktop/Echec/src/main/java/fr/rphstudio/chess/launcher/ChessGameController.java
-/Users/wu/Desktop/Echec/src/main/java/fr/rphstudio/chess/interf/EmptyCellException.java
-/Users/wu/Desktop/Echec/src/main/java/fr/rphstudio/chess/interf/OutOfBoardException.java
+/Users/teddy/Desktop/projet itescia/Echec/src/main/java/fr/rphstudio/chess/game/Piece.java
+/Users/teddy/Desktop/projet itescia/Echec/src/main/java/fr/rphstudio/chess/interf/EmptyCellException.java
+/Users/teddy/Desktop/projet itescia/Echec/src/main/java/fr/rphstudio/chess/interf/ChessException.java
+/Users/teddy/Desktop/projet itescia/Echec/src/main/java/fr/rphstudio/chess/interf/IChess.java
+/Users/teddy/Desktop/projet itescia/Echec/src/main/java/fr/rphstudio/chess/game/Board.java
+/Users/teddy/Desktop/projet itescia/Echec/src/main/java/fr/rphstudio/chess/game/ChessModel.java
+/Users/teddy/Desktop/projet itescia/Echec/src/main/java/fr/rphstudio/chess/interf/OutOfBoardException.java
+/Users/teddy/Desktop/projet itescia/Echec/src/main/java/fr/rphstudio/chess/launcher/ChessGameController.java
+/Users/teddy/Desktop/projet itescia/Echec/src/main/java/fr/rphstudio/chess/launcher/ChessFontManager.java
+/Users/teddy/Desktop/projet itescia/Echec/src/main/java/fr/rphstudio/chess/launcher/MainLauncher.java

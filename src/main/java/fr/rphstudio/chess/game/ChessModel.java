@@ -2,21 +2,30 @@ package fr.rphstudio.chess.game;
 
 import fr.rphstudio.chess.interf.EmptyCellException;
 import fr.rphstudio.chess.interf.OutOfBoardException;
+import fr.rphstudio.chess.launcher.ChessFontManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ChessModel implements fr.rphstudio.chess.interf.IChess {
 
-    public Board boardGame;
 
-    private ChessModel (){}
+    private Board board;
+
+
+    private ChessModel (){
+        this.board= new Board();
+    }
+
 
     private static ChessModel INSTANCE = new ChessModel();
+
+
 
     public static ChessModel getInstance(){
         return INSTANCE;
     }
+
 
 
     @Override
@@ -26,12 +35,22 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
 
     @Override
     public ChessType getPieceType(ChessPosition p) throws EmptyCellException, OutOfBoardException {
-        return ChessType.TYP_PAWN;
+        Piece piece = this.board.takePiece(p);
+        if(piece != null){
+            return piece.getChessType();
+        }else{
+           throw new EmptyCellException();
+        }
     }
 
     @Override
     public ChessColor getPieceColor(ChessPosition p) throws EmptyCellException, OutOfBoardException {
-        return ChessColor.CLR_WHITE;
+        Piece piece = this.board.takePiece(p);
+        if(piece != null){
+            return piece.getChessColor();
+        }else{
+            throw new EmptyCellException();
+        }
     }
 
     @Override
@@ -47,12 +66,13 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
 
     @Override
     public void movePiece(ChessPosition p0, ChessPosition p1) {
-
+        
     }
 
     @Override
     public ChessKingState getKingState(ChessColor color) {
         return ChessKingState.KING_THREATEN;
+
     }
 
     @Override
