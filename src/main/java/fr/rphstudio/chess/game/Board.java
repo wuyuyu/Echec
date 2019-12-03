@@ -14,15 +14,15 @@ public class Board {
 
         Piece KingBlack = new Piece( IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_KING,new MoveKing());
         this.boardGame [0][3] = KingBlack;
-        Piece QueenBlack = new Piece(IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_QUEEN,new MovePawn());
+        Piece QueenBlack = new Piece(IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_QUEEN,new MoveQueen());
         this.boardGame [0][4] = QueenBlack;
-        Piece BishopBlack = new Piece(IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_BISHOP,new MovePawn());
+        Piece BishopBlack = new Piece(IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_BISHOP,new MoveBishop());
         this.boardGame [0][2] = BishopBlack;
         this.boardGame [0][5] = BishopBlack;
-        Piece KnightBlack = new Piece(IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_KNIGHT,new MovePawn());
+        Piece KnightBlack = new Piece(IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_KNIGHT,new MoveKnight());
         this.boardGame [0][1] = KnightBlack;
         this.boardGame [0][6] = KnightBlack;
-        Piece RookBlack= new Piece(IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_ROOK,new MovePawn());
+        Piece RookBlack= new Piece(IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_ROOK,new MoveRook());
         this.boardGame [0][0] = RookBlack;
         this.boardGame [0][7] = RookBlack;
 
@@ -35,15 +35,15 @@ public class Board {
 
         Piece KingWhite = new Piece( IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_KING,new MoveKing());
         this.boardGame [7][3] = KingWhite;
-        Piece QueenWhite = new Piece(IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_QUEEN,new MovePawn());
+        Piece QueenWhite = new Piece(IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_QUEEN,new MoveQueen());
         this.boardGame [7][4] = QueenWhite;
-        Piece BishopWhite = new Piece(IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_BISHOP,new MovePawn());
+        Piece BishopWhite = new Piece(IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_BISHOP,new MoveBishop());
         this.boardGame [7][2] = BishopWhite;
         this.boardGame [7][5] = BishopWhite;
-        Piece KnightWhite = new Piece(IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_KNIGHT,new MovePawn());
+        Piece KnightWhite = new Piece(IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_KNIGHT,new MoveKnight());
         this.boardGame [7][1] = KnightWhite;
         this.boardGame [7][6] = KnightWhite;
-        Piece RookWhite = new Piece(IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_ROOK,new MovePawn());
+        Piece RookWhite = new Piece(IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_ROOK,new MoveRook());
         this.boardGame [7][0] = RookWhite;
         this.boardGame [7][7] = RookWhite;
     }

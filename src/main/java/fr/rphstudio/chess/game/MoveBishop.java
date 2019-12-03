@@ -1,4 +1,12 @@
 package fr.rphstudio.chess.game;
 
-public class MoveBishop {
+import fr.rphstudio.chess.interf.IChess;
+
+import java.util.List;
+
+public class MoveBishop implements IMove {
+    @Override
+    public List<IChess.ChessPosition> getPossibleMove(IChess.ChessPosition position, Board board) {
+        return null;
+    }
 }
