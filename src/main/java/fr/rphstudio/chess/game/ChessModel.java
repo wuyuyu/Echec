@@ -11,6 +11,8 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
 
 
     private Board board;
+    private ChessColor white;
+
 
 
     private ChessModel (){
@@ -54,8 +56,8 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
     }
 
     @Override
-    public int getNbRemainingPieces(ChessColor color) {
-        return 0;
+    public int getNbRemainingPieces(ChessColor color) { return 0;
+        return Board.piecesCounter;
     }
 
     @Override

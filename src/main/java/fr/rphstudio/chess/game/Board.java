@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Board {
 
+    private Piece selectedPiece;
     private Piece[][] boardGame;
 
     public Board(){
@@ -45,7 +46,6 @@ public class Board {
         Piece RookWhite = new Piece(IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_ROOK);
         this.boardGame [7][0] = RookWhite;
         this.boardGame [7][7] = RookWhite;
-
     }
 
     public Piece takePiece (IChess.ChessPosition position){
@@ -55,4 +55,25 @@ public class Board {
         return piece;
     }
 
+    public int piecesCounter () {
+
+        int nbPiecesWhite = 0;
+        int nbPiecesBlack = 0;
+        for (int i = 0; i < boardGame.length; i = i + 1) {
+            for (int j = 0; j < boardGame[0].length; j = j + 1) {
+                this.selectedPiece = this.boardGame[i][j];
+                if (selectedPiece != null) {
+                    if(selectedPiece.getChessColor() == IChess.ChessColor.CLR_WHITE){
+                        nbPiecesWhite = nbPiecesWhite + 1;
+                        return nbPiecesWhite;
+                    } else {
+                        nbPiecesBlack = nbPiecesBlack + 1;
+                        return nbPiecesBlack;
+                    }
+                }
+            }
+        }
+        return 0;
+
+    }
 }
