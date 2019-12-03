@@ -12,7 +12,7 @@ public class Board {
     public Board(){
         this.boardGame=new Piece[8][8];
 
-        Piece KingBlack = new Piece( IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_KING,new MovePawn());
+        Piece KingBlack = new Piece( IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_KING,new MoveKing());
         this.boardGame [0][3] = KingBlack;
         Piece QueenBlack = new Piece(IChess.ChessColor.CLR_BLACK, IChess.ChessType.TYP_QUEEN,new MovePawn());
         this.boardGame [0][4] = QueenBlack;
@@ -33,7 +33,7 @@ public class Board {
             this.boardGame [6][i] = PawnWhite;
         }
 
-        Piece KingWhite = new Piece( IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_KING,new MovePawn());
+        Piece KingWhite = new Piece( IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_KING,new MoveKing());
         this.boardGame [7][3] = KingWhite;
         Piece QueenWhite = new Piece(IChess.ChessColor.CLR_WHITE, IChess.ChessType.TYP_QUEEN,new MovePawn());
         this.boardGame [7][4] = QueenWhite;
