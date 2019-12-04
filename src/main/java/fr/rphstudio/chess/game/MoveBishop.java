@@ -2,6 +2,7 @@ package fr.rphstudio.chess.game;
 
 import fr.rphstudio.chess.interf.IChess;
 
+import javax.tools.Tool;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +16,10 @@ public class MoveBishop implements IMove {
         int position_X = position.x;
         int position_Y = position.y;
         Piece piece = board.getBoardGame()[position_Y][position_X];
-        List<IChess.ChessPosition> positions = new ArrayList<>();
 
-        return positions;
+        IChess.ChessPosition position_piece = new IChess.ChessPosition(position_X,position_Y);
+
+        return Tools.directionDiagonal(position_piece,board);
+
     }
 }

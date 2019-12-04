@@ -51,8 +51,10 @@ public class Board {
     public Piece takePiece (IChess.ChessPosition position){
         int position_X = position.x;
         int position_Y = position.y;
-        Piece piece = this.boardGame [position_Y][position_X] ;
-        return piece;
+        if(Tools.isValid(position)){
+            return this.boardGame [position_Y][position_X] ;
+        }
+        return null;
     }
 
     public int piecesCounterWhite () {
