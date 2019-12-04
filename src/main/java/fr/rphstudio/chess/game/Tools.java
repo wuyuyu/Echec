@@ -41,7 +41,6 @@ public class Tools {
         // crerate empty list of positions
         List<IChess.ChessPosition> positionsList = new ArrayList<>();
 
-
         int positionX = p.x;
         int positionY = p.y;
         Piece piece = brd.takePiece(p);
@@ -80,25 +79,62 @@ public class Tools {
                     }
                 }
             }
-
         }
-
         // return my supa list
         return positionsList;
+    }
 
+    public static List<IChess.ChessPosition> directionVertical(IChess.ChessPosition p, Board brd) {
+
+        // crerate empty list of positions
+        List<IChess.ChessPosition> positionsList = new ArrayList<>();
+
+        int positionX = p.x;
+        int positionY = p.y;
+        Piece piece = brd.takePiece(p);
+
+        for (int dir = 0; dir <= 3; dir++) {
+            int dx = 0;
+            int dy = 0;
+            if (dir == 0) {
+                dy = +1;
+            }
+            if (dir == 1){
+                dy = -1;
+            }
+            if (dir == 2){
+                dx = +1;
+            }
+            if (dir == 3) {
+                dx = -1;
+            }
+
+            for(int distance= 1;distance<=7;distance++){
+
+                int destX = positionX + (dy*distance);
+                int destY = positionY + (dx*distance);
+
+                // Create chess pos
+                IChess.ChessPosition destPosition = new IChess.ChessPosition(destX,destY);
+
+                // check if position is in board (isValid ?)
+                if(isValid(destPosition)){
+                    // check if there is another piece on my way (isEmpty, isEnemy ?)
+                    if(isEmpty(destPosition,brd)){
+                        positionsList.add(destPosition);
+                    }
+                    else {
+                        if (isEnemy(destPosition,brd,piece.getChessColor())){
+                            // add pos to list
+                            positionsList.add(destPosition);
+                        }
+                        // stop
+                        break;
+                    }
+                }
+            }
+        }
+        // return my supa list
+        return positionsList;
     }
 }
-
-
-
-        /*
-        for(int dir = 0; dir < 3; dir++){
-            int dx = 1;
-            int dy = 1;
-            if(dir >= 2){
-                dx = -1;
-                p.x = p.x -dx;
-            }
-            if(dir %2 == 0){
-                dy = -1;
-            }*/
