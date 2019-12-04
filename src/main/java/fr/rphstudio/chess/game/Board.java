@@ -95,4 +95,5 @@ public class Board {
         this.boardGame [pb.y][pb.x] = this.boardGame[pa.y][pa.x];
         this.boardGame[pa.y][pa.x] = null;
     }
+
 }
