@@ -14,10 +14,21 @@ public class MoveKing implements IMove {
         Piece piece = board.getBoardGame()[position_Y][position_X];
         List<IChess.ChessPosition> positions = new ArrayList<>();
 
-            if (piece.getChessColor() == IChess.ChessColor.CLR_BLACK) {
+        IChess.ChessPosition nextPos = null;
+
+            if ( Tools.isEnemy(position, board, piece.getChessColor()) ) {
+
+                /*
+                nextPos =  new IChess.ChessPosition(position.x + 1, position.y);
+                if (Tools.isValid(nextPos)){
+                    positions.add(nextPos);
+                }
+                //*/
                 if (position_X < 7) {
                     positions.add(new IChess.ChessPosition(position.x + 1, position.y));
                 }
+
+
                 if (position_X > 0) {
                     positions.add(new IChess.ChessPosition(position.x - 1, position.y));
                 }
@@ -39,7 +50,7 @@ public class MoveKing implements IMove {
                 if (position_X > 0 && position_Y < 7) {
                     positions.add(new IChess.ChessPosition(position.x - 1, position.y + 1));
                 }
-            } else if (piece.getChessColor() == IChess.ChessColor.CLR_WHITE) {
+            } else if (piece.getChessColor() == IChess.ChessColor.CLR_WHITE && Tools.isEnemy(position, board, piece.getChessColor())) {
                 if (position_X > 0) {
                     positions.add(new IChess.ChessPosition(position.x - 1, position.y));
                 }

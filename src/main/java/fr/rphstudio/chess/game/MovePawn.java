@@ -12,8 +12,8 @@ public class MovePawn implements IMove {
         Piece piece = board.getBoardGame()[position_Y][position_X];
         List<IChess.ChessPosition> positions = new ArrayList<>();
 
-        //positions.add( new IChess.ChessPosition(position.x,position.y-1) );
-        //positions.add( new IChess.ChessPosition(position.x,position.y+1) );
+        positions.add( new IChess.ChessPosition(position.x,position.y-1) );
+        positions.add( new IChess.ChessPosition(position.x,position.y+1) );
 
         return positions;
     }
