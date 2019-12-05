@@ -1,18 +1,18 @@
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/Tools.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/MoveQueen.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/launcher/ChessFontManager.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/MoveBishop.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/launcher/ChessGameController.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/MoveKing.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/Board.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/MoveKnight.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/Piece.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/launcher/MainLauncher.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/MoveRook.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/interf/OutOfBoardException.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/interf/IChess.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/MovePawn.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/IMove.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/game/ChessModel.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/interf/EmptyCellException.java
-/Users/laurentbodin/Documents/Echec/src/main/java/fr/rphstudio/chess/interf/ChessException.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/Piece.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/ChessModel.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/Board.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/interf/ChessException.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/MoveBishop.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/launcher/ChessGameController.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/MovePawn.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/MoveKnight.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/interf/OutOfBoardException.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/launcher/MainLauncher.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/MoveKing.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/MoveQueen.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/MoveRook.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/launcher/ChessFontManager.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/Tools.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/interf/EmptyCellException.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/interf/IChess.java
+/Users/teddy/Desktop/PROJET PERSO/Echec/src/main/java/fr/rphstudio/chess/game/IMove.java

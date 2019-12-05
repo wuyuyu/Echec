@@ -1,4 +1,4 @@
-package fr.rphstudio.chess.game;
+ package fr.rphstudio.chess.game;
 
 import fr.rphstudio.chess.interf.IChess;
 
@@ -35,6 +35,15 @@ public class Tools {
         return false;
     }
 
+    public static boolean isValue_bool(Piece piece_statut_bool) {
+
+            if (piece_statut_bool.getvalid_first()) {
+
+                return piece_statut_bool.getvalid_first()==false;
+            }else {
+                return piece_statut_bool.getvalid_first() == false;
+            }
+    }
 
     public static List<IChess.ChessPosition> directionDiagonal(IChess.ChessPosition p, Board brd) {
 
@@ -359,6 +368,181 @@ public class Tools {
                         }
                         // stop
                         break;
+                    }
+                }
+            }
+
+        }
+        // return my supa list
+        return positionsList;
+    }
+
+    public static List<IChess.ChessPosition> directionPawn(IChess.ChessPosition p, Board brd) {
+
+        // crerate empty list of positions
+        List<IChess.ChessPosition> positionsList = new ArrayList<>();
+
+
+        int positionX = p.x;
+        int positionY = p.y;
+        Piece piece = brd.takePiece(p);
+
+
+
+            for (int dir = 0; dir <= 2; dir++) {
+                int dx = 0;
+                int dy = 0;
+                if (piece.getChessColor() == IChess.ChessColor.CLR_WHITE) {
+
+
+                    if (dir > 1) {
+                        dx = 0;
+                    }
+                    if (dir % 2 == 0) {
+                        dy = -1;
+                    }
+
+
+                    for (int distance = 1; distance <= 2; distance++) {
+
+                        int destX = positionX + (dx * distance);
+                        int destY = positionY + (dy * distance);
+
+                        // Create chess pos
+                        IChess.ChessPosition destPosition = new IChess.ChessPosition(destX, destY);
+
+                        // check if position is in board (isValid ?)
+                        if (isValid(destPosition)) {
+                            // check if there is another piece on my way (isEmpty, isEnemy ?)
+                            if (isEmpty(destPosition, brd)) {
+                                positionsList.add(destPosition);
+                            } else {
+                                if (isEnemy(destPosition, brd, piece.getChessColor())) {
+                                    // add pos to list
+                                    positionsList.add(destPosition);
+                                }
+                                // stop
+                                break;
+                            }
+                        }
+                    }
+                    // return my supa list
+                    return positionsList;
+                } else {
+                    if (dir > 1) {
+                        dx = 0;
+                    }
+                    if (dir % 2 == 0) {
+                        dy = +1;
+                    }
+
+                    for (int distance = 1; distance <= 2; distance++) {
+
+                        int destX = positionX + (dx * distance);
+                        int destY = positionY + (dy * distance);
+
+                        // Create chess pos
+                        IChess.ChessPosition destPosition = new IChess.ChessPosition(destX, destY);
+
+                        // check if position is in board (isValid ?)
+                        if (isValid(destPosition)) {
+                            // check if there is another piece on my way (isEmpty, isEnemy ?)
+                            if (isEmpty(destPosition, brd)) {
+                                positionsList.add(destPosition);
+                            } else {
+                                if (isEnemy(destPosition, brd, piece.getChessColor())) {
+                                    // add pos to list
+                                    positionsList.add(destPosition);
+                                }
+                                // stop
+                                break;
+                            }
+                        }
+                    }
+                }
+
+            }
+            // return my supa list
+            return positionsList;
+    }
+
+
+
+    public static List<IChess.ChessPosition> directionPawn2(IChess.ChessPosition p, Board brd) {
+
+        // crerate empty list of positions
+        List<IChess.ChessPosition> positionsList = new ArrayList<>();
+
+
+        int positionX = p.x;
+        int positionY = p.y;
+        Piece piece = brd.takePiece(p);
+
+        for (int dir = 0; dir <= 2; dir++) {
+            int dx = 0;
+            int dy = 0;
+            if(piece.getChessColor() == IChess.ChessColor.CLR_WHITE){
+
+
+                if (dir > 1) {
+                    dx = 0;
+                }
+                if (dir % 2 == 0) {
+                    dy = -1;
+                }
+
+                for (int distance = 1; distance <= 1; distance++) {
+
+                    int destX = positionX + (dx * distance);
+                    int destY = positionY + (dy * distance);
+
+                    // Create chess pos
+                    IChess.ChessPosition destPosition = new IChess.ChessPosition(destX, destY);
+
+                    // check if position is in board (isValid ?)
+                    if (isValid(destPosition)) {
+                        // check if there is another piece on my way (isEmpty, isEnemy ?)
+                        if (isEmpty(destPosition, brd)) {
+                            positionsList.add(destPosition);
+                        } else {
+                            if (isEnemy(destPosition, brd, piece.getChessColor())) {
+                                // add pos to list
+                                positionsList.add(destPosition);
+                            }
+                            // stop
+                            break;
+                        }
+                    }
+                }
+            }else{
+                if (dir > 1) {
+                    dx = 0;
+                }
+                if (dir % 2 == 0) {
+                    dy = +1;
+                }
+
+                for (int distance = 1; distance <= 2; distance++) {
+
+                    int destX = positionX + (dx * distance);
+                    int destY = positionY + (dy * distance);
+
+                    // Create chess pos
+                    IChess.ChessPosition destPosition = new IChess.ChessPosition(destX, destY);
+
+                    // check if position is in board (isValid ?)
+                    if (isValid(destPosition)) {
+                        // check if there is another piece on my way (isEmpty, isEnemy ?)
+                        if (isEmpty(destPosition, brd)) {
+                            positionsList.add(destPosition);
+                        } else {
+                            if (isEnemy(destPosition, brd, piece.getChessColor())) {
+                                // add pos to list
+                                positionsList.add(destPosition);
+                            }
+                            // stop
+                            break;
+                        }
                     }
                 }
             }
