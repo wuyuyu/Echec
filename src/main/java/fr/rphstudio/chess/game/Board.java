@@ -97,5 +97,40 @@ public class Board {
         this.boardGame [pb.y][pb.x] = this.boardGame[pa.y][pa.x];
         this.boardGame[pa.y][pa.x] = null;
     }
+    public static boolean kingStatusWhite(Board board, IChess.ChessColor color) {
+        ArrayList<IChess.ChessPosition> piecesPossibleMovements = new ArrayList<IChess.ChessPosition>();
+        IChess.ChessPosition positionSelectedPiece = new IChess.ChessPosition();
+        IChess.ChessPosition positionKing = new IChess.ChessPosition();
+        for (int i = 0; i < board.getBoardGame().length; i = i + 1) {
+            for (int j = 0; j < board.getBoardGame()[0].length; j = j + 1) {
+                Piece selectedPiece = board.boardGame[i][j];
+                if (color == IChess.ChessColor.CLR_WHITE) {
+                    if (selectedPiece.getChessColor() == IChess.ChessColor.CLR_WHITE && selectedPiece.getChessType() == IChess.ChessType.TYP_KING) {
+                        positionKing.x = j;
+                        positionKing.y = i;
+                    } else if (selectedPiece.getChessColor() == IChess.ChessColor.CLR_BLACK) {
+                        selectedPiece.getMove().getPossibleMove(positionSelectedPiece, board).add(positionSelectedPiece);
+                    }
+                }
+                if (color == IChess.ChessColor.CLR_BLACK) {
+                    if (selectedPiece.getChessColor() == IChess.ChessColor.CLR_BLACK && selectedPiece.getChessType() == IChess.ChessType.TYP_KING) {
+                        positionKing.x = j;
+                        positionKing.y = i;
+                    } else if (selectedPiece.getChessColor() == IChess.ChessColor.CLR_WHITE) {
+                        selectedPiece.getMove().getPossibleMove(positionSelectedPiece, board).add(positionSelectedPiece);
+                    }
+                }
+                for(int k=0; i <= piecesPossibleMovements.size(); i = i + 1) {
+                    positionKing = piecesPossibleMovements.get(k);
+            }
+        }
 
+        }
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
+
+

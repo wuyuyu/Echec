@@ -84,8 +84,11 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
 
     @Override
     public ChessKingState getKingState(ChessColor color) {
-        return ChessKingState.KING_THREATEN;
-
+        if (Board.kingStatusWhite(this.board, color)) {
+            return ChessKingState.KING_THREATEN;
+        } else {
+            return ChessKingState.KING_SAFE;
+        }
     }
 
     @Override
