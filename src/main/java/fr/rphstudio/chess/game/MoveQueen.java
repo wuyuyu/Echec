@@ -12,7 +12,7 @@ public class MoveQueen implements IMove {
 
         IChess.ChessPosition position_piece = new IChess.ChessPosition(position.x,position.y);
 
-        return Tools.directionDiagonalVertical(position_piece,board);
+        return Tools.directionQueen(position_piece,board);
 
     }
 }
