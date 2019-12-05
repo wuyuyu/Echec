@@ -404,6 +404,7 @@ class ChessGameController extends BasicGameState
         // Reinit the board and start the game
         this.board.reinit();
     }
+
     
     /**
      * Static method that converts screen mouse position into a chess board cell position

@@ -32,7 +32,7 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
 
     @Override
     public void reinit() {
-
+        this.board = new Board();
     }
 
     @Override
