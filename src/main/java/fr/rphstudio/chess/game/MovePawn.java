@@ -8,7 +8,7 @@ public class MovePawn implements IMove {
     @Override
     public List<IChess.ChessPosition> getPossibleMove(IChess.ChessPosition position, Board board) {
 
-        Piece piVBoolean=board.takePiece(position);
+       /* Piece piVBoolean=board.takePiece(position);
         
         boolean checkValue = piVBoolean.getvalid_first();
 
@@ -21,8 +21,9 @@ public class MovePawn implements IMove {
             return Tools.directionPawn(position_piece,board);
         }
         else{
-            return Tools.directionPawn2(position_piece,board);
-      /*  int position_X = position.x;
+            return Tools.directionPawn2(position_piece,board);*/
+
+       int position_X = position.x;
         int position_Y = position.y;
         Piece piece = board.getBoardGame()[position_Y][position_X];
         IChess.ChessColor test = piece.getChessColor();
@@ -42,6 +43,6 @@ public class MovePawn implements IMove {
         }
         positions.add(new IChess.ChessPosition(position.x, position.y - 1));
         return positions;
-    }*/
+    }
 }
 
