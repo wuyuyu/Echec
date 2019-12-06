@@ -358,7 +358,7 @@ public class Tools {
         int positionY = p.y;
         Piece piece = brd.takePiece(p);
 
-        for (int dir = 0; dir <= 1; dir++) {
+        for (int dir = 0; dir <= 7; dir++) {
             int dx = 0;
             int dy = 0;
             if (dir == 0) {
