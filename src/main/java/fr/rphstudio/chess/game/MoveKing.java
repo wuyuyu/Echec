@@ -7,6 +7,12 @@ import java.util.List;
 
 public class MoveKing implements IMove {
 
+    /**
+     * Returns the possible moves of a king piece
+     * @param position
+     * @param board
+     * @return
+     */
     @Override
     public List<IChess.ChessPosition> getPossibleMove(IChess.ChessPosition position, Board board) {
 

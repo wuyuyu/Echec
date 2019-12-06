@@ -6,6 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MoveRook implements IMove {
+
+    /**
+     * Returns the possible moves of a rook piece
+     * @param position
+     * @param board
+     * @return
+     */
     @Override
     public List<IChess.ChessPosition> getPossibleMove(IChess.ChessPosition position, Board board) {
 

@@ -9,6 +9,9 @@ public class Board {
     private Piece selectedPiece;
     private Piece[][] boardGame;
 
+    /**
+     * Places the different pieces on the board when it is initialized
+     */
     public Board() {
         this.boardGame = new Piece[8][8];
 
@@ -57,6 +60,10 @@ public class Board {
         return null;
     }
 
+    /**
+     * Counts the number of white pieces on the board
+     * @return
+     */
     public int piecesCounterWhite() {
 
         int nbPiecesWhite = 0;
@@ -73,6 +80,10 @@ public class Board {
         return nbPiecesWhite;
     }
 
+    /**
+     * Counts the number of black pieces on the board
+     * @return
+     */
     public int piecesCounterBlack() {
 
         int nbPiecesBlack = 0;
@@ -93,11 +104,22 @@ public class Board {
         return boardGame;
     }
 
+    /**
+     * A piece can move with (we give it a new position)
+     * @param pa
+     * @param pb
+     */
     public void movingPiece(IChess.ChessPosition pa, IChess.ChessPosition pb) {
         this.boardGame[pb.y][pb.x] = this.boardGame[pa.y][pa.x];
         this.boardGame[pa.y][pa.x] = null;
     }
 
+    /**
+     * Returns if a king is safe or threaten by an enemy piece
+     * @param board
+     * @param color
+     * @return
+     */
     public static boolean kingStatus(Board board, IChess.ChessColor color) {
         ArrayList<IChess.ChessPosition> piecesPossibleMovements = new ArrayList<>();
         IChess.ChessPosition positionKing = new IChess.ChessPosition();

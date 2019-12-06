@@ -29,12 +29,21 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
     }
 
 
-
+    /**
+     * Reinitializes the board like the very fist turn
+     */
     @Override
     public void reinit() {
         this.board = new Board();
     }
 
+    /**
+     * Returns the type of a piece
+     * @param p x/y position on the board where we want to get the piece type.
+     * @return
+     * @throws EmptyCellException
+     * @throws OutOfBoardException
+     */
     @Override
     public ChessType getPieceType(ChessPosition p) throws EmptyCellException, OutOfBoardException {
         Piece piece = this.board.takePiece(p);
@@ -45,6 +54,13 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
         }
     }
 
+    /**
+     * Returns the color of a piece
+     * @param p x/y position on the board where we want to get the piece color.
+     * @return
+     * @throws EmptyCellException
+     * @throws OutOfBoardException
+     */
     @Override
     public ChessColor getPieceColor(ChessPosition p) throws EmptyCellException, OutOfBoardException {
         Piece piece = this.board.takePiece(p);
@@ -55,6 +71,11 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
         }
     }
 
+    /**
+     * Returns the number of taking pieces
+     * @param color the requested color of the pieces to count.
+     * @return
+     */
     @Override
     public int getNbRemainingPieces(ChessColor color) {
         if (color == ChessColor.CLR_WHITE){
@@ -66,6 +87,11 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
         return 0;
     }
 
+    /**
+     * Returns a list of the piece's moves
+     * @param p requested piece position.
+     * @return
+     */
     @Override
     public List<ChessPosition> getPieceMoves(ChessPosition p) {
         List list = new ArrayList();
@@ -82,6 +108,11 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
         this.board.movingPiece(p0, p1);
     }
 
+    /**
+     * Returns and display if a king is safe or threaten by an enemy piece
+     * @param color the requested king color.
+     * @return
+     */
     @Override
     public ChessKingState getKingState(ChessColor color) {
         if (Board.kingStatus(this.board, color)) {
@@ -91,6 +122,11 @@ public class ChessModel implements fr.rphstudio.chess.interf.IChess {
         }
     }
 
+    /**
+     * Returns the list of taking pieces
+     * @param color color of the removed pieces
+     * @return
+     */
     @Override
     public List<ChessType> getRemovedPieces(ChessColor color) {
         ArrayList list = new ArrayList();

@@ -7,6 +7,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class Tools {
+
+    /**
+     * Returns if a future position is valid (on the board or not)
+     * @param p
+     * @return
+     */
     public static boolean isValid(IChess.ChessPosition p) {
 
         if (p.x >= 0 && p.x <= 7 && p.y >= 0 && p.y <= 7) {
@@ -16,6 +22,12 @@ public class Tools {
         }
     }
 
+    /**
+     * Returns if a future position is empty or not
+     * @param pDestination
+     * @param board
+     * @return
+     */
     public static boolean isEmpty(IChess.ChessPosition pDestination, Board board) {
         Piece piece = board.takePiece(pDestination);
 
@@ -26,6 +38,13 @@ public class Tools {
         }
     }
 
+    /**
+     * Returns if on a future position there is an anemy or not
+     * @param pDestination
+     * @param board
+     * @param colorInit
+     * @return
+     */
     public static boolean isEnemy(IChess.ChessPosition pDestination, Board board, IChess.ChessColor colorInit) {
 
         if (board.takePiece(pDestination) != null)
@@ -35,6 +54,10 @@ public class Tools {
         return false;
     }
 
+    /**
+     * @param piece_statut_bool
+     * @return
+     */
     public static boolean isValue_bool(Piece piece_statut_bool) {
 
             if (piece_statut_bool.getvalid_first()) {
@@ -45,6 +68,12 @@ public class Tools {
             }
     }
 
+    /**
+     * Returns the possible moves of a piece in diagonal
+     * @param p
+     * @param brd
+     * @return
+     */
     public static List<IChess.ChessPosition> directionDiagonal(IChess.ChessPosition p, Board brd) {
 
         // crerate empty list of positions
@@ -93,6 +122,12 @@ public class Tools {
         return positionsList;
     }
 
+    /**
+     * Returns the possible moves of a rook piece
+     * @param p
+     * @param brd
+     * @return
+     */
     public static List<IChess.ChessPosition> directionRook(IChess.ChessPosition p, Board brd) {
 
         // crerate empty list of positions
@@ -147,6 +182,12 @@ public class Tools {
         return positionsList;
     }
 
+    /**
+     * Returns the possible moves of a queen piece
+     * @param p
+     * @param brd
+     * @return
+     */
     public static List<IChess.ChessPosition> directionQueen(IChess.ChessPosition p, Board brd) {
 
         // crerate empty list of positions
@@ -221,6 +262,12 @@ public class Tools {
         return positionsList;
     }
 
+    /**
+     * Returns the possible moves of a king piece
+     * @param p
+     * @param brd
+     * @return
+     */
     public static List<IChess.ChessPosition> directionKing(IChess.ChessPosition p, Board brd) {
 
         // crerate empty list of positions
@@ -294,6 +341,13 @@ public class Tools {
         // return my supa list
         return positionsList;
     }
+
+    /**
+     * Returns the possible moves of a knight piece
+     * @param p
+     * @param brd
+     * @return
+     */
     public static List<IChess.ChessPosition> directionKnight(IChess.ChessPosition p, Board brd) {
 
 
@@ -304,7 +358,7 @@ public class Tools {
         int positionY = p.y;
         Piece piece = brd.takePiece(p);
 
-        for (int dir = 0; dir <= 7; dir++) {
+        for (int dir = 0; dir <= 1; dir++) {
             int dx = 0;
             int dy = 0;
             if (dir == 0) {
@@ -377,7 +431,13 @@ public class Tools {
         return positionsList;
     }
 
-    public static List<IChess.ChessPosition> directionPawn(IChess.ChessPosition p, Board brd) {
+    /**
+     * Returns the possible moves of a pawn piece (move of 1 cell)
+     * @param p
+     * @param brd
+     * @return
+     */
+    public static List<IChess.ChessPosition> directionPawn (IChess.ChessPosition p, Board brd) {
 
         // crerate empty list of positions
         List<IChess.ChessPosition> positionsList = new ArrayList<>();
@@ -467,7 +527,12 @@ public class Tools {
     }
 
 
-
+    /**
+     * Returns the possible moves of a pawn piece (move of 2 cells)
+     * @param p
+     * @param brd
+     * @return
+     */
     public static List<IChess.ChessPosition> directionPawn2(IChess.ChessPosition p, Board brd) {
 
         // crerate empty list of positions

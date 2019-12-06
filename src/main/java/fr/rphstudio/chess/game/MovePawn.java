@@ -5,6 +5,12 @@ import java.util.*;
 
 public class MovePawn implements IMove {
 
+    /**
+     * Returns the possible moves of a pawn piece
+     * @param position
+     * @param board
+     * @return
+     */
     @Override
     public List<IChess.ChessPosition> getPossibleMove(IChess.ChessPosition position, Board board) {
 

@@ -29,6 +29,13 @@ public class Piece {
      this.valid_first=true_value;
     }
 
+    /**
+     * Returns the possible moves of a piece
+
+     * @param position
+     * @param board
+     * @return
+     */
     public List<ChessPosition> getMove(ChessPosition position , Board board) {
         return this.move.getPossibleMove(position,board);
     }
